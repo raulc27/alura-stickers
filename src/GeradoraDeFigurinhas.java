@@ -12,10 +12,11 @@ import java.net.URL;
 
 public class GeradoraDeFigurinhas {
     
-    public void cria() throws Exception{
+    public void cria(InputStream inputStream, String nomeArquivo) throws Exception{
         // leitura da imagem
         //InputStream inputStream = new FileInputStream(new File("assets/filme.jpg"));
-        InputStream inputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_7.jpg").openStream();
+        //InputStream inputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies_7.jpg").openStream();
+        
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
         
         // cria nova imagem em memória com transparência e com tamanho novo
@@ -40,8 +41,8 @@ public class GeradoraDeFigurinhas {
         ImageIO.write(novaImagem, "png", new File("assets/figurinha.png"));
     }
 
-    public static void main(String[] args) throws Exception{
+ /*    public static void main(String[] args) throws Exception{
         var geradora = new GeradoraDeFigurinhas();
         geradora.cria();
-    }
+    } */
 }
